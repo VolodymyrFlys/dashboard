@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Панель управління</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background-color: #0a1f44;
+      font-family: Garamond, serif;
+      color: white;
+    }
+
+    #password-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #0a1f44;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    #password-screen input {
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 1rem;
+    }
+
+    #password-screen button {
+      padding: 0.5rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #4fc3f7;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      max-width: 1800px;
+      margin: 0 auto;
+    }
+
+    .card {
+      position: relative;
+      background: linear-gradient(145deg, #0d254c, #081a3a);
+      border-radius: 20px;
+      height: 200px;
+      border: 2px solid transparent;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.03);
+      border-color: #4fc3f7;
+      box-shadow: 0 0 20px rgba(79, 195, 247, 0.6);
+    }
+
+    .card-emoji {
+      font-size: 2rem;
+      position: absolute;
+      bottom: -40px;
+      right: 16px;
+      transition: bottom 0.4s ease;
+    }
+
+    .card:hover .card-emoji {
+      bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div id="password-screen">
+    <input type="password" id="password-input" placeholder="Введіть пароль">
+    <button onclick="checkPassword()">Увійти</button>
+  </div>
+
+  <h1>Панель управління</h1>
+  <div class="container">
+    <a class="card" href="https://docs.google.com/spreadsheets/d/ID1" target="_blank">
+      Таблиця для ТАРАСА <span class="card-emoji">🐸</span>
+    </a>
+    <a class="card" href="https://docs.google.com/spreadsheets/d/ID2" target="_blank">
+      Сервісне обслуговування <span class="card-emoji">🐸</span>
+    </a>
+    <a class="card" href="https://docs.google.com/spreadsheets/d/ID3" target="_blank">
+      В Харкові на відправку <span class="card-emoji">🐸</span>
+    </a>
+    <a class="card" href="https://docs.google.com/spreadsheets/d/ID4" target="_blank">
+      Додавання нових арт <span class="card-emoji">🐸</span>
+    </a>
+    <a class="card" href="https://docs.google.com/spreadsheets/d/ID5" target="_blank">
+      Статистика Сервіс <span class="card-emoji">🐸</span>
+    </a>
+    <a class="card" href="https://docs.google.com/spreadsheets/d/ID6" target="_blank">
+      Forsining Orders <span class="card-emoji">🐸</span>
+    </a>
+    <a class="card" href="https://docs.google.com/spreadsheets/d/ID7" target="_blank">
+      Статистика за березень <span class="card-emoji">🐸</span>
+    </a>
+    <a class="card" href="https://docs.google.com/spreadsheets/d/ID8" target="_blank">
+      Price запчастин <span class="card-emoji">🐸</span>
+    </a>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('password-input').value;
+      if (input === '12345') {
+        document.getElementById('password-screen').style.display = 'none';
+      } else {
+        alert('Неправильний пароль!');
+      }
+    }
+  </script>
+</body>
+</html>
